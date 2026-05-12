@@ -12,8 +12,8 @@ export function QuestionUI() {
   const [error, setError] = useState<string | null>(null);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
 
-  const handleGenerate = async (e: React.FormEvent<HTMLFormElement>) => {
-    if (e) e.preventDefault();
+  const handleGenerate = async (e?: React.SyntheticEvent) => {
+    e?.preventDefault();
     if (!jobTitle.trim() || isLoading) return;
 
     setIsLoading(true);
